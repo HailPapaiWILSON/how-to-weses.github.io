@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Software à Variável de Sistema no Windows</title>
+</head>
+<body>
+    <article>
+        <h1>Adicionar Software à Variável de Sistema no Windows</h1>
+        
+        <p>Adicionar um software às variáveis de sistema do Windows permite que você execute o programa a partir de qualquer local no prompt de comando sem precisar navegar até o diretório de instalação. Aqui está um guia detalhado:</p>
+        
+        <section>
+            <h2>Método 1: Através das Propriedades do Sistema</h2>
+            
+            <ol>
+                <li>
+                    <strong>Localize o diretório de instalação do software</strong>:
+                    <ul>
+                        <li>Normalmente em <code>C:\Program Files\</code> ou <code>C:\Program Files (x86)\</code></li>
+                        <li>Você precisará do caminho completo para o executável (.exe)</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>Acesse as Variáveis de Ambiente</strong>:
+                    <ul>
+                        <li>Pressione <kbd>Win + R</kbd>, digite <code>sysdm.cpl</code> e pressione Enter</li>
+                        <li>Vá para a aba "Avançado"</li>
+                        <li>Clique em "Variáveis de Ambiente..."</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>Edite a variável PATH</strong>:
+                    <ul>
+                        <li>Na seção "Variáveis do sistema", encontre "Path" e clique em "Editar"</li>
+                        <li>Clique em "Novo" e adicione o caminho completo para o diretório do software</li>
+                        <li>Exemplo: <code>C:\Program Files\Software\bin</code></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>Confirme as alterações</strong>:
+                    <ul>
+                        <li>Clique em "OK" em todas as janelas abertas</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Método 2: Usando o Prompt de Comando (Admin)</h2>
+            
+            <ol>
+                <li>Abra o Prompt de Comando como administrador</li>
+                <li>Use o comando:
+                    <pre><code>setx /M PATH "%PATH%;C:\caminho\para\software"</code></pre>
+                    (Substitua pelo caminho real do seu software)
+                </li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Verificando a instalação</h2>
+            
+            <ol>
+                <li>Abra um novo Prompt de Comando (as alterações só terão efeito em novas sessões)</li>
+                <li>Digite o nome do executável do software e pressione Enter
+                    <ul>
+                        <li>Se configurado corretamente, o software deve iniciar</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Observações importantes</h2>
+            
+            <ul>
+                <li>Alterar variáveis de sistema requer privilégios de administrador</li>
+                <li>Tenha cuidado ao modificar o PATH - erros podem afetar o funcionamento do sistema</li>
+                <li>Alguns instaladores fazem isso automaticamente durante a instalação</li>
+                <li>Para alterações apenas para o usuário atual, use <code>setx</code> sem o parâmetro <code>/M</code></li>
+            </ul>
+            
+            <p>Precisa de ajuda com algum software específico? Posso fornecer instruções mais detalhadas para casos particulares.</p>
+        </section>
+    </article>
+</body>
+</html>
