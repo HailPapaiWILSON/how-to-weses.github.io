@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USB Bootável</title>
+</head>
+<body>
+    <h1>Como criar um USB bootável para instalar o Ubuntu usando o Rufus</h1>
+    
+    <p>Para criar um USB bootável para instalar o Ubuntu usando o <strong>Rufus</strong>, siga os passos abaixo:</p>
+    
+    <h2>Passo a Passo: Criar USB Bootável com Rufus</h2>
+    
+    <ol>
+        <li>
+            <strong>Baixe o Ubuntu</strong>
+            <ul>
+                <li>Acesse o site oficial: <a href="https://ubuntu.com/download" target="_blank">https://ubuntu.com/download</a></li>
+                <li>Escolha a versão desejada (ex: Ubuntu 24.04.2 LTS) e baixe o arquivo <code>.iso</code>.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Baixe e abra o Rufus</strong>
+            <ul>
+                <li>Download: <a href="https://rufus.ie/" target="_blank">https://rufus.ie/</a> (versão portátil ou instalador).</li>
+                <li>Conecte o USB (mínimo <strong>4GB</strong>) e execute o Rufus.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Configure o Rufus</strong>
+            <ul>
+                <li><strong>Dispositivo</strong>: Selecione seu USB.</li>
+                <li><strong>Arquivo de inicialização (Boot selection)</strong>: Clique em <strong>SELECT</strong> e escolha a ISO do Ubuntu baixada.</li>
+                <li>
+                    <strong>Esquema de partição</strong>:
+                    <ul>
+                        <li>Se seu computador for <strong>UEFI</strong>, selecione <strong>GPT</strong>.</li>
+                        <li>Se for <strong>Legacy (BIOS)</strong>, selecione <strong>MBR</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Sistema de arquivos</strong>: Deixe como <strong>FAT32</strong> (recomendado para UEFI).</li>
+                <li><strong>Tamanho do cluster</strong>: Padrão.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Inicie o processo</strong>
+            <ul>
+                <li>Clique em <strong>START</strong> e confirme se deseja escrever no modo <strong>ISO Image</strong>.</li>
+                <li>Aguarde até a conclusão (pode demorar alguns minutos).</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Finalização</strong>
+            <ul>
+                <li>Quando o Rufus terminar, o USB estará pronto para instalar o Ubuntu.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Dicas Importantes</h2>
+    <ul>
+        <li>✔ <strong>Backup do USB</strong>: Todos os dados serão apagados, faça backup antes.</li>
+        <li>✔ <strong>Verifique a ISO</strong>: Use checksum (<code>SHA256</code>) para garantir que o download não está corrompido.</li>
+        <li>✔ <strong>Modo UEFI/Legacy</strong>: Se o PC não reconhecer o USB, altere o esquema de partição no Rufus.</li>
+    </ul>
+    
+    <p>Pronto! Agora reinicie o PC, configure a BIOS/UEFI para bootar pelo USB e inicie a instalação do Ubuntu. 🚀</p>
+</body>
+</html>
