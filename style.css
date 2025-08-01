@@ -1,354 +1,342 @@
-/* Reset and Base Styles */
+css
+/* Cria um base para todos os nav fazendo com que a pag fique igual em todos */
 * {
+    /* Reseta a margem e o padding para todos os elementos */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que o padding e a borda não aumentem o tamanho do elemento */
 }
 
 html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+    font-size: 16px; /* Define o tamanho da fonte base para o cálculo de unidades `rem` */
+    scroll-behavior: smooth; /* Habilita a rolagem suave ao navegar por âncoras */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define uma família de fontes padrão para o texto */
+    line-height: 1.6; /* Ajusta o espaçamento entre linhas para melhor leitura */
+    color: #333; /* Define a cor padrão do texto */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Aplica um gradiente linear como fundo */
+    min-height: 100vh; /* Garante que o corpo ocupe, no mínimo, a altura total da viewport */
 }
 
-/* Header Styles */
+/* Estilos do Cabeçalho */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    border-radius: 0 0 20px 20px;
+    background: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente para um efeito 'vidro'. */
+    backdrop-filter: blur(10px); /* Aplica um desfoque ao que está por trás, realçando o efeito 'vidro'. */
+    padding: 2rem 1rem; /* Espaçamento interno para conteúdo do cabeçalho. */
+    text-align: center; /* Alinha todo o texto e elementos ao centro. */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o cabeçalho da página. */
+    margin-bottom: 2rem; /* Margem abaixo do cabeçalho para separar do conteúdo. */
+    border-radius: 0 0 20px 20px; /* Bordas arredondadas apenas na parte inferior. */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    font-weight: 700;
+    font-size: 2.5rem; /* Tamanho da fonte grande para o título principal. */
+    color: #2c3e50; /* Cor escura para o texto do título. */
+    margin-bottom: 0.5rem; /* Margem abaixo do título. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil no texto para profundidade. */
+    font-weight: 700; /* Deixa a fonte mais pesada (negrito). */
 }
 
 header p {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    margin-bottom: 2rem;
-    font-style: italic;
+    font-size: 1.1rem; /* Tamanho da fonte para o parágrafo. */
+    color: #7f8c8d; /* Cor cinza para o parágrafo. */
+    margin-bottom: 2rem; /* Margem abaixo do parágrafo. */
+    font-style: italic; /* Texto em itálico. */
 }
 
-/* Search Container */
+/* Conteiner da barra de pesquisa que é inutil */
 .search_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    max-width: 500px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 50px;
-    padding: 8px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Permite alinhamento de itens internos em linha. */
+    justify-content: center; /* Centraliza os itens horizontalmente dentro do container. */
+    align-items: center; /* Centraliza os itens verticalmente. */
+    gap: 0; /* Define o espaço entre os itens para 0, garantindo que o input e o botão fiquem colados. */
+    max-width: 500px; /* Limita a largura máxima do container para melhor visualização. */
+    margin: 0 auto; /* Centraliza o container na página. */
+    background: white; /* Cor de fundo branca para o container. */
+    border-radius: 50px; /* Borda arredondada para criar a forma de "pílula". */
+    padding: 8px; /* Espaço interno para afastar o conteúdo das bordas. */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidade. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave em 0.3s para 'transform' e 'box-shadow'. */
 }
 
 .search_container:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Move o container 2px para cima no hover. */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Aumenta e escurece a sombra no hover para um efeito de "elevação". */
 }
 
 .search_input {
-    flex: 1;
-    border: none;
-    padding: 15px 20px;
-    font-size: 1rem;
-    background: transparent;
-    outline: none;
-    color: #333;
+    flex: 1; /* Permite que o input preencha o espaço disponível, se ajustando ao container. */
+    border: none; /* Remove a borda padrão do input. */
+    padding: 15px 20px; /* Aumenta a área clicável e de digitação. */
+    font-size: 1rem; /* Tamanho de fonte padrão. */
+    background: transparent; /* Torna o fundo do input transparente, usando o fundo do container. */
+    outline: none; /* Remove o contorno azul que aparece ao focar o input. */
+    color: #333; /* Cor do texto. */
 }
 
 .search_input::placeholder {
-    color: #95a5a6;
+    color: #95a5a6; /* Cor cinza clara para o texto de placeholder. */
 }
 
 .search_button {
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Cor de fundo com gradiente azul. */
+    color: white; /* Cor do texto branca. */
+    border: none; /* Remove a borda padrão do botão. */
+    padding: 15px 25px; /* Espaço interno para o botão. */
+    border-radius: 50px; /* Borda arredondada para o botão. */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável. */
+    font-size: 1rem; /* Tamanho de fonte. */
+    font-weight: 600; /* Deixa o texto do botão mais pesado. */
+    transition: all 0.3s ease; /* Animação suave para todas as propriedades no hover. */
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* Sombra suave para o botão. */
 }
 
 .search_button:hover {
-    background: linear-gradient(45deg, #2980b9, #1f618d);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    background: linear-gradient(45deg, #2980b9, #1f618d); /* Muda o gradiente para uma versão mais escura no hover. */
+    transform: translateY(-1px); /* Move o botão 1px para cima. */
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); /* Aumenta a sombra no hover. */
 }
 
-/* Main Content */
+/* Conteudo principal */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
+    max-width: 1200px; /* Limita a largura máxima do conteúdo principal a 1200 pixels para evitar que se estenda demais em telas grandes. */
+    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente na página. O '0' define margem superior e inferior como 0, e 'auto' calcula margens laterais iguais. */
+    padding: 0 2rem 4rem; /* Adiciona espaçamento interno (padding) ao redor do conteúdo principal. O '0' é para a parte superior, '2rem' para as laterais (esquerda e direita) e '4rem' para a parte inferior, evitando que o conteúdo toque as bordas da tela. */
 }
 
-/* Section Styles */
+/* Estilos da Seção */
 section {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.95); /* Define um fundo semitransparente para a seção. */
+    backdrop-filter: blur(10px); /* Aplica um filtro de desfoque ao fundo. */
+    margin-bottom: 2rem; /* Adiciona margem na parte inferior. */
+    padding: 2rem; /* Adiciona preenchimento interno. */
+    border-radius: 15px; /* Arredonda as bordas. */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Cria uma sombra suave. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Define transições suaves para 'transform' e 'box-shadow'. */
 }
 
 section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Move a seção 5px para cima ao passar o mouse. */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Aumenta a sombra ao passar o mouse. */
 }
 
 section h2 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 0.5rem;
-    font-weight: 600;
+    color: #2c3e50; /* Define a cor do título. */
+    font-size: 1.8rem; /* Define o tamanho da fonte do título. */
+    margin-bottom: 1.5rem; /* Adiciona margem inferior. */
+    border-bottom: 3px solid #3498db; /* Cria uma borda inferior colorida. */
+    padding-bottom: 0.5rem; /* Adiciona preenchimento na parte inferior da borda. */
+    font-weight: 600; /* Define o peso da fonte. */
 }
 
 section p {
-    color: #555;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    color: #555; /* Define a cor do texto do parágrafo. */
+    margin-bottom: 1rem; /* Adiciona margem na parte inferior do parágrafo. */
+    font-size: 1.1rem; /* Define o tamanho da fonte do parágrafo. */
 }
 
 /* Navigation Lists */
 nav ul {
-    list-style: none;
-    display: grid;
-    gap: 1rem;
-    margin-top: 1rem;
+    list-style: none; /* Remove os marcadores padrão da lista. */
+    display: grid; /* Usa grid para organizar os itens, permitindo espaçamento flexível. */
+    gap: 1rem; /* Adiciona um espaço de 1rem entre os itens da lista. */
+    margin-top: 1rem; /* Adiciona uma margem superior para afastar a lista do elemento acima. */
 }
 
 nav li {
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+    background: linear-gradient(135deg, #74b9ff, #0984e3); /* Aplica um degradê de azul como fundo para cada item. */
+    border-radius: 10px; /* Arredonda as bordas dos itens para um visual suave. */
+    transition: all 0.3s ease; /* Prepara os elementos para transições suaves em 0.3 segundos. */
+    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3); /* Adiciona uma sombra para dar profundidade ao item. */
 }
 
 nav li:hover {
-    transform: translateX(10px) scale(1.02);
-    box-shadow: 0 6px 25px rgba(116, 185, 255, 0.4);
+    transform: translateX(10px) scale(1.02); /* Move o item 10px para a direita e o aumenta levemente ao passar o mouse. */
+    box-shadow: 0 6px 25px rgba(116, 185, 255, 0.4); /* Aumenta a sombra ao passar o mouse para um efeito de destaque. */
 }
 
 nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    display: block; /* Torna o link um bloco, permitindo que ele preencha todo o 'li'. */
+    color: white; /* Define a cor do texto do link como branco. */
+    text-decoration: none; /* Remove a linha sublinhada padrão dos links. */
+    padding: 1rem 1.5rem; /* Adiciona um preenchimento interno para aumentar a área clicável do link. */
+    font-weight: 600; /* Deixa a fonte do texto um pouco mais negrita. */
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte do texto. */
+    border-radius: 10px; /* Arredonda as bordas do link, combinando com o 'li'. */
+    transition: all 0.3s ease; /* Aplica transição suave para as propriedades alteradas, como cor de fundo. */
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Adiciona um fundo semi-transparente ao passar o mouse. */
 }
 
 /* Links */
 a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: 500;
+    color: #3498db; /* Define a cor azul primária para links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Adiciona uma transição suave na mudança de cor */
+    font-weight: 500; /* Aplica um peso de fonte semi-bold */
 }
 
 a:hover {
-    color: #2980b9;
-    text-decoration: underline;
+    color: #2980b9; /* Altera a cor do link para um azul mais escuro ao passar o mouse */
+    text-decoration: underline; /* Adiciona um sublinhado ao passar o mouse */
 }
 
 /* Footer */
 footer {
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    margin-top: 4rem;
-    border-radius: 20px 20px 0 0;
+    background: rgba(44, 62, 80, 0.95); /* Cor de fundo semi-transparente para o rodapé. */
+    backdrop-filter: blur(10px); /* Aplica um efeito de desfoque (blur) no conteúdo atrás do rodapé. */
+    color: white; /* Cor do texto no rodapé. */
+    padding: 2rem; /* Espaçamento interno de 2rem em todos os lados. */
+    text-align: center; /* Alinha o texto ao centro. */
+    margin-top: 4rem; /* Margem superior para separar o rodapé do conteúdo principal. */
+    border-radius: 20px 20px 0 0; /* Arredonda os cantos superiores do rodapé. */
 }
 
 footer section {
-    background: transparent;
-    box-shadow: none;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    background: transparent; /* Remove a cor de fundo das seções dentro do rodapé. */
+    box-shadow: none; /* Remove qualquer sombra de caixa das seções. */
+    padding: 1rem 0; /* Espaçamento interno vertical para as seções. */
+    margin-bottom: 1rem; /* Margem inferior para separar seções dentro do rodapé. */
 }
 
 footer section:hover {
-    transform: none;
+    transform: none; /* Remove qualquer transformação (como escala ou rotação) ao passar o mouse. */
 }
 
 footer ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
+    list-style: none; /* Remove os marcadores de lista. */
+    display: flex; /* Transforma a lista em um container flexível. */
+    justify-content: center; /* Centraliza os itens da lista horizontalmente. */
+    gap: 2rem; /* Adiciona um espaço de 2rem entre os itens da lista. */
+    margin-top: 1rem; /* Adiciona uma margem superior para espaçamento. */
 }
 
 footer a {
-    color: #ecf0f1;
-    font-weight: 500;
+    color: #ecf0f1; /* Cor do link no rodapé. */
+    font-weight: 500; /* Peso da fonte do link. */
 }
 
 footer a:hover {
-    color: #3498db;
+    color: #3498db; /* Cor do link ao passar o mouse sobre ele. */
 }
 
-/* Page-specific styles for content pages */
+/* Estilos específicos para páginas de conteúdo */
 
-/* Article styles for guide pages */
+/* Estilos para artigos, como em páginas de guias */
 article {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente para o artigo */
+    backdrop-filter: blur(10px); /* Aplica desfoque no que está por trás do elemento */
+    max-width: 900px; /* Largura máxima para o conteúdo não se estender demais */
+    margin: 2rem auto; /* Centraliza o artigo na página com margem superior/inferior */
+    padding: 3rem; /* Espaçamento interno para o conteúdo não tocar nas bordas */
+    border-radius: 15px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar o artigo da página */
+    line-height: 1.8; /* Aumenta o espaçamento entre as linhas para facilitar a leitura */
 }
 
 article h1 {
-    color: #2c3e50;
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 1rem;
+    color: #2c3e50; /* Cor escura para o título principal */
+    font-size: 2.2rem; /* Tamanho da fonte do título principal */
+    margin-bottom: 2rem; /* Espaçamento abaixo do título */
+    text-align: center; /* Centraliza o título */
+    border-bottom: 3px solid #3498db; /* Linha azul abaixo do título para destaque */
+    padding-bottom: 1rem; /* Espaçamento entre o texto e a linha inferior */
 }
 
 article h2 {
-    color: #34495e;
-    font-size: 1.6rem;
-    margin: 2rem 0 1rem;
-    padding-left: 1rem;
-    border-left: 4px solid #3498db;
+    color: #34495e; /* Cor escura para o subtítulo */
+    font-size: 1.6rem; /* Tamanho da fonte do subtítulo */
+    margin: 2rem 0 1rem; /* Espaçamento acima e abaixo do subtítulo */
+    padding-left: 1rem; /* Espaçamento à esquerda para alinhar com a borda */
+    border-left: 4px solid #3498db; /* Linha vertical azul na esquerda para destaque */
 }
 
 article h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin: 1.5rem 0 1rem;
+    color: #2c3e50; /* Cor escura para o título de terceiro nível */
+    font-size: 1.3rem; /* Tamanho da fonte do título de terceiro nível */
+    margin: 1.5rem 0 1rem; /* Espaçamento acima e abaixo do título */
 }
 
 /* Lists in articles */
 article ol,
 article ul {
-    margin: 1rem 0 1rem 2rem;
+    margin: 1rem 0 1rem 2rem; /* Adiciona margem externa para espaçamento. */
 }
 
 article li {
-    margin-bottom: 0.8rem;
-    color: #555;
+    margin-bottom: 0.8rem; /* Espaçamento entre os itens da lista. */
+    color: #555; /* Define a cor padrão para os itens. */
 }
 
 article li strong {
-    color: #2c3e50;
+    color: #2c3e50; /* Altera a cor do texto em negrito dentro dos itens para destacar. */
 }
 
 /* Nested lists */
 article li ul,
 article li ol {
-    margin: 0.5rem 0 0.5rem 1.5rem;
+    margin: 0.5rem 0 0.5rem 1.5rem; /* Margem para listas aninhadas, menor que a principal. */
 }
 
 article li li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.4rem; /* Espaçamento menor para itens de listas aninhadas. */
 }
 
-/* Code blocks */
+/* Code blocks(pras partes do system varible que coloca os path tudo como se fosse codigo) */
 code {
-    background: #f8f9fa;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    color: #e74c3c;
-    border: 1px solid #e9ecef;
+    background: #f8f9fa; /* Fundo claro para código inline. */
+    padding: 0.2rem 0.5rem; /* Preenchimento interno para destacar o código. */
+    border-radius: 4px; /* Borda arredondada suave. */
+    font-family: 'Courier New', monospace; /* Fonte monoespaçada para código. */
+    color: #e74c3c; /* Cor de texto para destaque. */
+    border: 1px solid #e9ecef; /* Borda sutil para separação. */
 }
 
 pre {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 1rem 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #2c3e50; /* Fundo escuro para blocos de código. */
+    color: #ecf0f1; /* Cor de texto clara para contraste. */
+    padding: 1rem; /* Preenchimento interno. */
+    border-radius: 8px; /* Borda arredondada. */
+    overflow-x: auto; /* Permite rolagem horizontal para código longo. */
+    margin: 1rem 0; /* Margem externa. */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para profundidade. */
 }
 
 pre code {
-    background: transparent;
-    border: none;
-    color: #ecf0f1;
-    padding: 0;
-}
-
-/* Keyboard keys */
-kbd {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #495057;
-    display: inline-block;
-    font-family: monospace;
-    font-size: 0.9em;
-    padding: 0.2rem 0.4rem;
-    margin: 0 0.1rem;
+    background: transparent; /* Remove o fundo do `code` dentro de `pre`. */
+    border: none; /* Remove a borda do `code` dentro de `pre`. */
+    color: #ecf0f1; /* Mantém a cor de texto clara. */
+    padding: 0; /* Remove o preenchimento. */
 }
 
 /* Simple page styles for category pages */
 body > h1 {
-    color: white;
-    text-align: center;
-    margin: 2rem 1rem;
-    padding: 1rem;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
+    color: white; /* Cor do título principal. */
+    text-align: center; /* Centraliza o texto. */
+    margin: 2rem 1rem; /* Margem externa. */
+    padding: 1rem; /* Preenchimento interno. */
+    font-size: 2.5rem; /* Tamanho da fonte grande. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para o texto. */
+    background: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente. */
+    border-radius: 15px; /* Bordas arredondadas. */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo. */
 }
 
 body > h3 {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    margin: 1rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    max-width: calc(100% - 2rem);
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.95); /* Fundo quase branco e semi-transparente. */
+    backdrop-filter: blur(10px); /* Efeito de desfoque. */
+    margin: 1rem; /* Margem externa. */
+    padding: 1.5rem; /* Preenchimento interno. */
+    border-radius: 10px; /* Bordas arredondadas. */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Sombra para profundidade. */
+    max-width: calc(100% - 2rem); /* Largura máxima, considerando a margem. */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover. */
 }
 
 body > h3:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Move o elemento para cima no hover. */
 }
